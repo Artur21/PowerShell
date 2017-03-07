@@ -6,6 +6,6 @@ if ($process) {
    }
 else {
    $process_status = "Service not found"  + " - " + $a
-   $process_status >> "C:\log\porc_not_found.txt"
+   $process_status >> "C:\log\proc_not_found.txt"
      $process_start=  Start-Process -FilePath  "notepad"
 }
