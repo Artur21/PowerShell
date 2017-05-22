@@ -1,0 +1,12 @@
+$dupes = @()
+[System.Collections.ArrayList]$arrA = Get-Content C:\compare\A.txt
+[System.Collections.ArrayList]$arrB = Get-Content C:\compare\B.txt
+foreach ($itemA in $arrA) {
+if ($arrB -match $itemA) {
+$arrB.Remove($itemA)
+$dupes += $itemA
+}
+}
+
+Write-Host "Registros duplicados en A and B: $dupes"
+Write-Host "Registros que existe solo en archivo B: $arrB"
